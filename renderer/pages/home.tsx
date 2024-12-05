@@ -1,35 +1,51 @@
-import React from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
+import React from "react";
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  Heading,
+  Box,
+  Button,
+  Container,
+  Grid,
+  Text,
+  Input,
+  Center,
+} from "@yamada-ui/react";
 
 export default function HomePage() {
   return (
     <React.Fragment>
-      <Head>
-        <title>Home - Nextron (with-tailwindcss)</title>
-      </Head>
-      <div className="grid grid-col-1 text-2xl w-full text-center">
-        <div>
-          <Image
-            className="ml-auto mr-auto"
-            src="/images/logo.png"
-            alt="Logo image"
-            width={256}
-            height={256}
+      <Center margin={"20px 0 40px 0"}>
+        <Heading as={"h1"} fontSize={"2rem"}>
+          You get Secure Talking to Anyone!!
+        </Heading>
+      </Center>
+
+      <Center alignItems={"center"}>
+        <form>
+          <Input
+            margin={"20px 0"}
+            type="text"
+            id="emali"
+            placeholder="YOUR E-MAIL"
           />
-        </div>
-        <span>⚡ Electron ⚡</span>
-        <span>+</span>
-        <span>Next.js</span>
-        <span>+</span>
-        <span>tailwindcss</span>
-        <span>=</span>
-        <span>💕 </span>
-      </div>
-      <div className="mt-1 w-full flex-wrap flex justify-center">
-        <Link href="/next">Go to next page</Link>
-      </div>
+          <Input
+            type="password"
+            id="password"
+            placeholder="YOUR PASSWORD"></Input>
+          <Button type="submit" color={"primary"} margin={"20px 0"}>
+            Login
+          </Button>
+        </form>
+      </Center>
+
+      <Center>
+        <Text margin={"20px 0"}>
+          If you don't have an account, please{" "}
+          <Link href="/signup">Sign Up</Link>
+        </Text>
+      </Center>
     </React.Fragment>
-  )
+  );
 }
