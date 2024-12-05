@@ -37,7 +37,7 @@ export default function HomePage() {
       <Center>
         <Text margin={"20px 0"}>
           If you don't have an account, please{" "}
-          <Link href="/signup">
+          <Link href="/auth/signup/signup">
             <span style={{ color: "#f08080" }}>Sign Up</span>
           </Link>
         </Text>
