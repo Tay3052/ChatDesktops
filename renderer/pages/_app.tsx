@@ -10,6 +10,7 @@ import {
 import { ThemeProvider } from "@mui/material";
 import { Box } from "@yamada-ui/react";
 import { ColorModeScript, defaultConfig } from "@yamada-ui/react";
+import Header from "./components/header";
 
 const theme = {
   palette: {
@@ -26,17 +27,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   const { cookies } = pageProps;
   const colorModeManager = createColorModeManager("ssr", cookies);
   return (
-    <body className="background">
-      <ThemeProvider theme={theme.palette}>
-        <UIProvider colorModeManager={colorModeManager}>
-          <ColorModeScript initialColorMode={defaultConfig.initialColorMode} />
-
-          <Box>
-            <Component {...pageProps} />
-          </Box>
-        </UIProvider>
-      </ThemeProvider>
-    </body>
+    <ThemeProvider theme={theme}>
+      <UIProvider colorModeManager={colorModeManager}>
+        <ColorModeScript initialColorMode={defaultConfig.initialColorMode} />
+        <Box as={"header"}>
+          <Header />
+        </Box>
+        <Box as={"main"}>
+          <Component {...pageProps} />
+        </Box>
+      </UIProvider>
+    </ThemeProvider>
   );
 }
 

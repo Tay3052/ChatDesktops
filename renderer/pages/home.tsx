@@ -16,12 +16,6 @@ import {
 export default function HomePage() {
   return (
     <React.Fragment>
-      <Center margin={"20px 0 40px 0"}>
-        <Heading as={"h1"} fontSize={"2rem"}>
-          You get Secure Talking to Anyone!!
-        </Heading>
-      </Center>
-
       <Center alignItems={"center"}>
         <form>
           <Input
@@ -43,8 +37,18 @@ export default function HomePage() {
       <Center>
         <Text margin={"20px 0"}>
           If you don't have an account, please{" "}
-          <Link href="/signup">Sign Up</Link>
+          <Link href="/signup">
+            <span style={{ color: "#f08080" }}>Sign Up</span>
+          </Link>
         </Text>
+      </Center>
+
+      <Center>
+        <Box as={"p"} marginBottom={"10px"} opacity={0}>
+          <Button type="button">
+            <Link href={""}>SecretChatIsHere🤪</Link>
+          </Button>
+        </Box>
       </Center>
     </React.Fragment>
   );
