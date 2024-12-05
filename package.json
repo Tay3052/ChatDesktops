@@ -11,8 +11,13 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
+    "@mui/material": "^6.1.10",
+    "@mui/styled-engine-sc": "^6.1.10",
+    "@yamada-ui/react": "^1.7.0",
     "electron-serve": "^1.3.0",
-    "electron-store": "^8.2.0"
+    "electron-store": "^8.2.0",
+    "eslint": "^9.16.0",
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@types/node": "^20.11.16",
