@@ -8,7 +8,9 @@
   "scripts": {
     "dev": "nextron",
     "build": "nextron build",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "electron-builder install-app-deps",
+    "lint": "eslint /renderer .js,.jsx,.ts,.tsx",
+    "prepare": "husky"
   },
   "dependencies": {
     "@mui/material": "^6.1.10",
@@ -33,6 +35,8 @@
     "drizzle-kit": "^0.29.1",
     "electron": "^31.0.1",
     "electron-builder": "^24.13.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
     "next": "^14.2.4",
     "nextron": "^9.4.0",
     "postcss": "^8.4.38",
